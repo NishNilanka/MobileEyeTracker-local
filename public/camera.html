@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JavaScript Sensor Access Demo</title>
+</head>
+<body>
+<main role="main" class="container">
+
+<div class="p-3 mb-2 bg-secondary" id="demo-div">
+
+<h4 style="margin-top:0.75rem;">Orientation</h4>
+<ul>
+  <li>X-axis (&beta;): <span id="Orientation_b">0</span><span>&deg;</span></li>
+  <li>Y-axis (&gamma;): <span id="Orientation_g">0</span><span>&deg;</span></li>
+  <li>Z-axis (&alpha;): <span id="Orientation_a">0</span><span>&deg;</span></li>
+</ul>
+
+</div>
+</main>
+<script>
+
+function handleOrientation(event) {
+  updateFieldIfNotNull('Orientation_a', event.alpha, 2);
+  updateFieldIfNotNull('Orientation_b', event.beta, 2);
+  updateFieldIfNotNull('Orientation_g', event.gamma, 2);
+}
+
+
+function updateFieldIfNotNull(fieldName, value, precision=10){
+  if (value != null)
+    document.getElementById(fieldName).innerHTML = value.toFixed(precision);
+}
+
+
+let is_running = false;
+
+  
+  // Request permission for iOS 13+ devices
+  if (DeviceMotionEvent &&
+    typeof DeviceMotionEvent.requestPermission === "function") {
+    DeviceMotionEvent.requestPermission();
+  }
+  
+  if (is_running){
+    window.removeEventListener("deviceorientation", handleOrientation);
+  }else{
+    window.addEventListener("deviceorientation", handleOrientation);
+  }
+  is_running = !is_running;
+
+
+</script>
+</body>
+</html>
