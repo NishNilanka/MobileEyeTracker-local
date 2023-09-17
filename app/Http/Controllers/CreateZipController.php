@@ -69,7 +69,7 @@ class CreateZipController extends Controller
 
                 //collect the ID and grab the data required for the videos that have been selected to download
                 foreach ($idArray as $sentID) {
-                    $testSql = 'select sid, age, glasses, gender, deviceMobile, created_at, updated_at  from demographics WHERE `sid` = "'.$sentID.'"';
+                    $testSql = 'select sid, age, glasses, gender, luxvalue, deviceMobile, created_at, updated_at  from demographics WHERE `sid` = "'.$sentID.'"';
                     //call database
                     $DBArray = DB::select($testSql);
                     //strip DB select array of objects and insert to new array

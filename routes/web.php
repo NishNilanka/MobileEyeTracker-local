@@ -210,5 +210,9 @@ Route::post('/camerafeatures', [App\Http\Controllers\CameraFeatureController::cl
 // routes/web.php
 Route::post('/run-python-script', 'App\Http\Controllers\PythonController@runScript');
 
+Route::post('/luxValue', [App\Http\Controllers\LuxValueController::class, 'store'])->name('luxValue.store');
+
+
+
 
 

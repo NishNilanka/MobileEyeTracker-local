@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Demographic extends Model
+class LuxValue extends Model
 {
     use HasFactory;
-    public $table = 'demographics';
+    public $table = 'luxvalues';
     protected $fillable = [
         'sid',
-        'age',
-        'glasses',
-        'gender',
-        'luxvalue',
-        'deviceMobile'
+		'videoid',
+        'luxvalue'
     ];
 }

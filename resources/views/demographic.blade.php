@@ -155,13 +155,8 @@
 				</div>
 
         <div class="row">
-          <div class="col-md-4 col-centered">
-					<label for="model">Select your mobile device model:</label>
-					<select class="form-select form-select-sm" aria-label="Default select example" id="model" name="model" required onchange="enableButton()">
-						<option value="">Select</option>
-					</select>
-					<br>
-				</div>
+    
+</div>
 
 
                 <!-- Demographic Submit Button  -->
@@ -276,10 +271,7 @@ function loadDeviceModels(selectObject)
 	}
 }
 
-function enableButton()
-{
 
-}
 
 function removeOptions(selectElement) {
    var i, L = selectElement.options.length - 1;
